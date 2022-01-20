@@ -1,32 +1,30 @@
-# Python代码仓库模板
+# 标题：飞桨常规赛：黄斑中央凹定位（GAMMA挑战赛任务二） - 12月第3名方案
 
-![GitHub forks](https://img.shields.io/github/forks/GT-ZhangAcer/PythonRepository-Template?style=for-the-badge) ![GitHub Repo stars](https://img.shields.io/github/stars/GT-ZhangAcer/PythonRepository-Template?style=for-the-badge) 
+本项目为2021.12参赛作品，最终得分8.53045
 
-这是一个简单的迁移模板，使用者只需在[模板仓库](https://github.com/GT-ZhangAcer/PythonRepository-Template)中点击[use this template](https://github.com/GT-ZhangAcer/PythonRepository-Template/generate)即可创建属于自己的具备前端页面空白Paddle项目。
+Python版本：python 3.7
 
+框架版本：PaddlePaddle 2.0.2
 
-## 项目结构
+本项目AI Studio地址：https://aistudio.baidu.com/aistudio/projectdetail/3369894?contributionType=1
+从中可以获得更加详细的介绍和可一键复现的飞桨算法代码
+![image](https://user-images.githubusercontent.com/95835850/150354750-0b22bc41-33ed-4e5b-80ea-5b9e6ab5319f.png)
 
-### Main分支（Default）
-该分支为主要的开发分支，与项目有关的说明和代码文件可放置于此，在仓库被访问时默认展示该分支。
-```
--|
---LICENSE   开源协议文件，默认为MIT开源协议。
---README.md 项目说明文件，可使用Markdowm编辑器进行编辑。
---requirements.txt Python项目依赖列表
-```  
-### gh-pages分支
-该分支下默认会给出静态页面文件，在使用该模板后将自动生成一个项目介绍网页`https://GitHub昵称.github.io/项目名`，我们只需对该分支下的`index.md`文件进行修改即可操控这个页面。
+## 提交时所使用的checkpoint
+最终比赛提交的结果中，checkpoints使用的是/home/aistudio/best_model_0.0124/路径下的model.pdparams
 
-## 使用方法
+## 参数配置
+根据GPU显存大小将批次大小(Batch size)设定为32
 
-### Step1 使用模板仓库创建一个新的个人仓库
-进入[模板仓库]()主页，获取最新模板或点击[此处](https://github.com/GT-ZhangAcer/PythonRepository-Template/generate)立即创建一个这样的特殊仓库。
-<img src="https://ai-studio-static-online.cdn.bcebos.com/77a8ffd9cd9b4953a39f609bb2b0a4903bc046f354944d5d9ee776676f580095" width="800px">  
-简单填写仓库信息  
-<img src="https://ai-studio-static-online.cdn.bcebos.com/e42d4a7b3a064e788b0761570b19b27e18f19a9eeba44c21abf22d7270e38fda" width="800px">
+将迭代轮数设定为3000，初始学习率设定为0.0001
 
-### Step2 上传项目文件至个人仓库
-<img src="https://ai-studio-static-online.cdn.bcebos.com/81ed71bc5ab74d01ab3ed244b987a08b7f3664baecf4475f8c337a2cbfcb04e5" width="800px">  
-<img src="https://ai-studio-static-online.cdn.bcebos.com/069da53af0ca4cbe8f2de962d2cd3e2d6dbbba9e44d9411bb0bd8dda8a7c1b52" width="800px"> 
+本案例使用adam优化器
 
+经测试以上参数设定可以达到较好的结果
+
+## 总结与展望
+尝试其他优化器
+
+进一步调整学习率及超参数，考虑一些学习率调整策略
+
+尝试更深层的网络模型
